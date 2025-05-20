@@ -1,0 +1,14 @@
+[project]
+name = "sharp-devices"
+version = "0.1.0"
+description = "Device operations and control for Sharp IoT devices"
+requires-python = ">=3.13"
+authors = [
+    { name = "Jakub Fijałkowski" }
+]
+dependencies = [
+    "sharp-core",
+]
+
+[tool.uv.sources]
+sharp-core = { workspace = true }

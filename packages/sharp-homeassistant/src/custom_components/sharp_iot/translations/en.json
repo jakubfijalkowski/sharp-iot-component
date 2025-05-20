@@ -1,0 +1,21 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Sharp IoT Setup",
+        "description": "Enter your Sharp IoT terminal ID to connect your air purifiers and humidifiers.",
+        "data": {
+          "terminal_id": "Terminal ID"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to Sharp IoT devices. Please check your terminal ID and try again.",
+      "invalid_auth": "Invalid terminal ID. Please verify your terminal ID is correct.",
+      "unknown": "Unexpected error occurred during setup."
+    },
+    "abort": {
+      "already_configured": "Device is already configured"
+    }
+  }
+}

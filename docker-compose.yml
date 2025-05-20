@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  homeassistant:
+    container_name: sharp-ha-test
+    image: ghcr.io/home-assistant/home-assistant:stable
+    volumes:
+      - ./test-config:/config
+      - ./packages/sharp-homeassistant/src/custom_components:/config/custom_components:ro
+      - ./packages/sharp-devices/src/sharp_devices:/workspace/sharp_devices:ro
+      - ./packages/sharp-core/src/sharp_core:/workspace/sharp_core:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "8123:8123"
+    environment:
+      - TZ=Europe/London
+      - PYTHONPATH=/workspace
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8123"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 60s
