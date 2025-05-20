@@ -1,0 +1,9 @@
+{
+  "name": "Sharp IoT",
+  "domains": ["fan", "sensor", "switch", "binary_sensor"],
+  "homeassistant": "2024.4.1",
+  "content_in_root": false,
+  "render_readme": true,
+  "iot_class": "cloud_polling",
+  "country": ["EU"]
+}

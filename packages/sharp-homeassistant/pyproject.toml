@@ -1,0 +1,16 @@
+[project]
+name = "sharp-homeassistant"
+version = "0.1.0"
+description = "Home Assistant integration for Sharp IoT air purifiers and humidifiers"
+requires-python = ">=3.13"
+authors = [
+    { name = "Jakub Fijałkowski", email = "jakub@fijalkowski.me" }
+]
+dependencies = [
+    "sharp-core",
+    "sharp-devices",
+]
+
+[tool.uv.sources]
+sharp-core = { workspace = true }
+sharp-devices = { workspace = true }

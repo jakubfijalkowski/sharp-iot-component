@@ -1,0 +1,20 @@
+[project]
+name = "sharp-auth"
+version = "0.1.0"
+description = "FastAPI authentication server for Sharp IoT devices"
+requires-python = ">=3.13"
+authors = [
+    { name = "Jakub Fijałkowski", email = "jakub@fijalkowski.me" }
+]
+dependencies = [
+    "sharp-core",
+    "fastapi>=0.104.0",
+    "uvicorn>=0.24.0",
+    "jinja2>=3.1.0",
+]
+
+[tool.uv.sources]
+sharp-core = { workspace = true }
+
+[project.scripts]
+sharp-auth = "sharp_auth.auth_server:main"

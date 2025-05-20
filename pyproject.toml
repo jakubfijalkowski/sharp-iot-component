@@ -1,0 +1,16 @@
+[tool.uv.workspace]
+members = [
+    "packages/sharp-core",
+    "packages/sharp-auth",
+    "packages/sharp-devices",
+    "packages/sharp-cli",
+    "packages/sharp-homeassistant"
+]
+
+[project]
+name = "sharp-iot"
+version = "0.1.0"
+description = "Sharp IoT device control workspace"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []

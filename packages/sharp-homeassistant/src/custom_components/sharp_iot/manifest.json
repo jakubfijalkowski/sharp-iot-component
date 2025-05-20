@@ -1,0 +1,12 @@
+{
+  "domain": "sharp_iot",
+  "name": "Sharp IoT",
+  "description": "Control Sharp air purifiers and humidifiers via cloud API",
+  "documentation": "https://github.com/jakubfijalkowski/sharp-iot-component",
+  "codeowners": ["@jakubfijalkowski"],
+  "config_flow": true,
+  "dependencies": [],
+  "requirements": ["requests>=2.31.0"],
+  "iot_class": "cloud_polling",
+  "version": "1.0.0"
+}

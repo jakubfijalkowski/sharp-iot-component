@@ -1,0 +1,17 @@
+[project]
+name = "sharp-cli"
+version = "0.1.0"
+description = "Command-line interface for Sharp IoT device control"
+requires-python = ">=3.13"
+authors = [
+    { name = "Jakub Fijałkowski", email = "jakub@fijalkowski.me" }
+]
+dependencies = [
+    "sharp-devices",
+]
+
+[tool.uv.sources]
+sharp-devices = { workspace = true }
+
+[project.scripts]
+sharp-cli = "sharp_cli.main:main"
