@@ -2,7 +2,7 @@ from dataclasses import dataclass
 from typing import List, Dict, Any, Optional
 import time
 import logging
-from sharp_core import SharpClient
+from ..sharp_core import SharpClient
 from .device_control import DeviceStatusCommand, Command, Operation, OperationList
 from .device_properties import DeviceProperties
 

@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 from enum import Enum
 from typing import Dict, Any, List
 
-from sharp_core.states import OperatingMode, HumidificationState, LEDBrightnessState, ChildLockState, PowerState
+from ..sharp_core.states import OperatingMode, HumidificationState, LEDBrightnessState, ChildLockState, PowerState
 
 class Operation(ABC):
     """

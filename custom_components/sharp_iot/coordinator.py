@@ -9,9 +9,9 @@ from typing import Any
 from homeassistant.core import HomeAssistant
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator, UpdateFailed
 
-from sharp_core import SharpClient
-from sharp_devices.operations import SharpOperations, BoxInfo
-from sharp_devices.device_properties import DeviceProperties
+from .lib.sharp_core import SharpClient
+from .lib.sharp_devices.operations import SharpOperations, BoxInfo
+from .lib.sharp_devices.device_properties import DeviceProperties
 
 from .const import DOMAIN, CONF_TERMINAL_ID, UPDATE_INTERVAL
 

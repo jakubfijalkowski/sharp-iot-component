@@ -10,8 +10,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from sharp_core.states import ChildLockState, LEDBrightnessState, PowerState, HumidificationState
-from sharp_devices.device_control import ChildLockCommand, LEDBrightnessCommand, PowerOperation, HumidificationCommand
+from .lib.sharp_core.states import ChildLockState, LEDBrightnessState, PowerState, HumidificationState
+from .lib.sharp_devices.device_control import ChildLockCommand, LEDBrightnessCommand, PowerOperation, HumidificationCommand
 
 from .const import DOMAIN, MANUFACTURER, MODEL
 from .coordinator import SharpIoTDataUpdateCoordinator

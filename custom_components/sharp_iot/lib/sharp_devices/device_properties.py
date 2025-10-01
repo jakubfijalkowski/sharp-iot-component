@@ -1,7 +1,7 @@
 from dataclasses import dataclass
 from typing import Optional, List, Dict, Any
 
-from sharp_core.states import OperatingMode, HumidificationState, LEDBrightnessState, ChildLockState, PowerState, QualityLevel, WaterContainerState
+from ..sharp_core.states import OperatingMode, HumidificationState, LEDBrightnessState, ChildLockState, PowerState, QualityLevel, WaterContainerState
 
 
 @dataclass

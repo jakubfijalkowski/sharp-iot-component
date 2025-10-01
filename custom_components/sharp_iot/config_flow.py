@@ -10,8 +10,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.data_entry_flow import FlowResult
 from homeassistant.exceptions import HomeAssistantError
 
-from sharp_core import SharpClient
-from sharp_devices.operations import SharpOperations
+from .lib.sharp_core import SharpClient
+from .lib.sharp_devices.operations import SharpOperations
 
 from .const import DOMAIN, CONF_TERMINAL_ID
 

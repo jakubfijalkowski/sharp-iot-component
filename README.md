@@ -1,3 +1,15 @@
+# Sharp IoT - Home Assistant Integration
+
+> **⚠️ Release Branch Notice**
+>
+> This is the `hacs` branch, automatically generated for HACS compatibility.
+>
+> **For development**, please use the `master` branch which uses UV workspaces.
+>
+> This branch contains vendored dependencies from `sharp-core` and `sharp-devices` packages.
+
+---
+
 # Sharp IoT Device Control
 
 > **⚠️ IMPORTANT DISCLAIMER**: This repository and its code are almost fully AI-generated. I take no responsibility for the code quality, accuracy, or functionality. The documentation (including READMEs) may contain errors or inaccuracies. While the plugin should work, **proceed with caution** and review the code yourself before use. I checked the code, but am not proficient in Python. As for the READMEs, I barely looked at them. :)

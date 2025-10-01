@@ -12,7 +12,7 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.update_coordinator import CoordinatorEntity
 
-from sharp_core.states import WaterContainerState
+from .lib.sharp_core.states import WaterContainerState
 
 from .const import DOMAIN, MANUFACTURER, MODEL
 from .coordinator import SharpIoTDataUpdateCoordinator
@@ -69,7 +69,7 @@ class SharpWaterLevelSensor(CoordinatorEntity, BinarySensorEntity):
         # Binary sensor unavailable when device is powered off
         properties = self.coordinator.get_device_properties(self._device_id)
         if properties and properties.f3_property:
-            from sharp_core.states import PowerState
+            from .lib.sharp_core.states import PowerState
             return properties.f3_property.power == PowerState.ON
         return False
 
