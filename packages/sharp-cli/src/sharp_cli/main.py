@@ -38,7 +38,7 @@ def main():
         if box_info.echonet_node and box_info.echonet_object:
             print(f"\nProperties for box {box_info.box_id}:")
             properties = operations.get_device_properties(box_info)
-            print(properties)
+            print(properties.debug_str())
 
     return 0
 
