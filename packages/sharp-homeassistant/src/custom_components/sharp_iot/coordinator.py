@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import asyncio
 import logging
+import time
 from datetime import timedelta
 from typing import Any
 
@@ -13,7 +14,7 @@ from sharp_core import SharpClient
 from sharp_devices.operations import SharpOperations, BoxInfo
 from sharp_devices.device_properties import DeviceProperties
 
-from .const import DOMAIN, CONF_TERMINAL_ID, UPDATE_INTERVAL
+from .const import DOMAIN, CONF_TERMINAL_ID, UPDATE_INTERVAL, TERMINAL_REFRESH_INTERVAL
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -27,6 +28,7 @@ class SharpIoTDataUpdateCoordinator(DataUpdateCoordinator):
         self.client = SharpClient()
         self.operations = SharpOperations(self.client)
         self.devices: list[BoxInfo] = []
+        self.last_terminal_refresh: float = 0
 
         super().__init__(
             hass,
@@ -38,10 +40,14 @@ class SharpIoTDataUpdateCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self) -> dict[str, Any]:
         """Update data via library."""
         try:
-            # Setup operations if needed
-            await self.hass.async_add_executor_job(
-                self.operations.setup_with_terminal_id, self.terminal_id
-            )
+            # Setup operations with terminal ID once per day (or on first run)
+            current_time = time.time()
+            if current_time - self.last_terminal_refresh >= TERMINAL_REFRESH_INTERVAL:
+                await self.hass.async_add_executor_job(
+                    self.operations.setup_with_terminal_id, self.terminal_id
+                )
+                self.last_terminal_refresh = current_time
+                _LOGGER.debug("Terminal ID refreshed with server")
 
             # Discover devices on first run or if no devices
             if not self.devices:
